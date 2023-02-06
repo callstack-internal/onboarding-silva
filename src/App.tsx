@@ -33,6 +33,7 @@ function App(): JSX.Element {
             name={item.name}
             weather={item.weather.main}
             temperature={item.main.temp}
+            onPress={() => {}}
           />
         )}
       />
