@@ -27,6 +27,7 @@ function App(): JSX.Element {
       <Text style={styles.title}>Weather</Text>
       <FlatList
         data={HARDCODED_CITIES}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
           <CityItem
             name={item.name}

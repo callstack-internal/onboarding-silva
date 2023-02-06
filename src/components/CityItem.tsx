@@ -1,15 +1,21 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {COLORS} from '../styles';
 
 type CityItemProps = {
   name: string;
   weather: string;
   temperature: number;
+  onPress: () => void;
 };
 
 function CityItem(item: CityItemProps): JSX.Element {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      activeOpacity={0.6}
+      accessibilityRole={'button'}
+      onPress={item.onPress}>
       <View style={styles.imagePlaceholder} />
       <View style={styles.textContainer}>
         <Text style={styles.name}>{item.name}</Text>
@@ -18,26 +24,28 @@ function CityItem(item: CityItemProps): JSX.Element {
       <View style={styles.temperatureContainer}>
         <Text style={styles.temperature}>{item.temperature}ºC</Text>
       </View>
-      {/* TODO: change for SVG */}
-      <Text>{'>'}</Text>
-    </View>
+      <Image
+        accessibilityIgnoresInvertColors
+        source={require('../assets/chevron-right.png')}
+      />
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ffffff',
+    backgroundColor: COLORS.white,
     flexDirection: 'row',
     alignItems: 'center',
     height: 85,
     borderBottomWidth: 1,
-    borderBottomColor: '#eeeeee',
+    borderBottomColor: COLORS.lightGray,
     paddingHorizontal: 20,
   },
   imagePlaceholder: {
     width: 40,
     height: 40,
-    backgroundColor: 'grey',
+    backgroundColor: COLORS.mediumGray,
     marginRight: 10,
   },
   textContainer: {
@@ -45,22 +53,22 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   name: {
-    color: '#727679',
+    color: COLORS.textPrimary,
     fontWeight: '500',
     fontSize: 18,
   },
   weather: {
-    color: '#9ea7af',
+    color: COLORS.textSecundary,
   },
   temperatureContainer: {
     paddingVertical: 5,
     paddingHorizontal: 10,
-    backgroundColor: '#b5d7e4',
+    backgroundColor: COLORS.accent,
     borderRadius: 50,
     marginRight: 10,
   },
   temperature: {
-    color: '#ffffff',
+    color: COLORS.white,
   },
 });
 

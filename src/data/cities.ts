@@ -1,5 +1,6 @@
 export const HARDCODED_CITIES = [
   {
+    id: '1',
     name: 'Porto',
     weather: {
       main: 'Rain',
@@ -10,6 +11,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '2',
     name: 'Lisbon',
     weather: {
       main: 'Rain',
@@ -20,6 +22,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '3',
     name: 'Madrid',
     weather: {
       main: 'Sun',
@@ -30,6 +33,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '4',
     name: 'Paris',
     weather: {
       main: 'Sun',
@@ -40,6 +44,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '5',
     name: 'Kraków',
     weather: {
       main: 'Sun',
@@ -50,6 +55,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '6',
     name: 'Wrocław',
     weather: {
       main: 'Sun',
@@ -60,6 +66,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '7',
     name: 'Porto',
     weather: {
       main: 'Rain',
@@ -70,6 +77,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '8',
     name: 'Lisbon',
     weather: {
       main: 'Rain',
@@ -80,6 +88,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '9',
     name: 'Madrid',
     weather: {
       main: 'Sun',
@@ -90,6 +99,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '10',
     name: 'Paris',
     weather: {
       main: 'Sun',
@@ -100,6 +110,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '11',
     name: 'Kraków',
     weather: {
       main: 'Sun',
@@ -110,6 +121,7 @@ export const HARDCODED_CITIES = [
     },
   },
   {
+    id: '12',
     name: 'Wrocław',
     weather: {
       main: 'Sun',
