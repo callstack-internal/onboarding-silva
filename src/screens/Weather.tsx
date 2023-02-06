@@ -29,6 +29,7 @@ function WeatherScreen({navigation}: Props): JSX.Element {
             name={item.name}
             weather={item.weather.main}
             temperature={item.main.temp}
+            withNavigation
             onPress={() => navigation.navigate('Details', {city: item})}
           />
         )}
