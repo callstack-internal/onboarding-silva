@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './navigation/types';
 import WeatherScreen from './screens/Weather';
@@ -7,6 +7,14 @@ import DetailsScreen from './screens/Details';
 import {COLORS} from './styles';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: COLORS.white,
+  },
+};
 
 const headerOptions = {
   headerStyle: {
@@ -17,7 +25,7 @@ const headerOptions = {
 
 function App(): JSX.Element {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={Theme}>
       <Stack.Navigator
         initialRouteName="Weather"
         screenOptions={{...headerOptions}}>

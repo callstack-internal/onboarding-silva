@@ -6,15 +6,27 @@ type CityItemProps = {
   name: string;
   weather: string;
   temperature: number;
+  iconUrl: string;
   withNavigation?: boolean;
   onPress?: () => void;
 };
 
 const CityItem = React.memo(
-  ({name, weather, temperature, withNavigation, onPress}: CityItemProps) => {
+  ({
+    name,
+    weather,
+    temperature,
+    iconUrl,
+    withNavigation,
+    onPress,
+  }: CityItemProps) => {
     const content = () => (
       <>
-        <View style={styles.imagePlaceholder} />
+        <Image
+          accessibilityIgnoresInvertColors
+          style={styles.image}
+          source={{uri: iconUrl}}
+        />
         <View style={styles.textContainer}>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.weather}>{weather}</Text>
@@ -47,18 +59,16 @@ const CityItem = React.memo(
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.white,
     flexDirection: 'row',
     alignItems: 'center',
     height: 85,
     borderBottomWidth: 1,
     borderBottomColor: COLORS.lightGray,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
   },
-  imagePlaceholder: {
+  image: {
     width: 40,
     height: 40,
-    backgroundColor: COLORS.mediumGray,
     marginRight: 10,
   },
   textContainer: {

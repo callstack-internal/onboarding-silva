@@ -1,10 +1,30 @@
 import React from 'react';
-import {FlatList, SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  SafeAreaView,
+  StatusBar,
+  View,
+  useColorScheme,
+  StyleSheet,
+} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import CityItem from '../components/CityItem';
-import {HARDCODED_CITIES} from '../data/cities';
 import {RootStackParamList} from '../navigation/types';
+import CityItem from '../components/CityItem';
+import Error from '../components/Error';
+import {useWeather} from '../hooks/useWeather';
+
+const CITIES_LIST = [
+  2988507, // Paris,
+  3117735, // Madrid,
+  5368361, // Los Angeles,
+  4930956, // Boston
+  5128581, // New York City,
+  1880252, // Singapore
+  3094802, // Cracow,
+  3081368, // Wroclaw,
+];
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Weather'>;
 
@@ -15,6 +35,24 @@ function WeatherScreen({navigation}: Props): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const [cities, isLoading, isError, refetch] = useWeather(CITIES_LIST);
+
+  if (isLoading) {
+    return (
+      <View style={styles.center}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
+  if (isError) {
+    return (
+      <View style={styles.center}>
+        <Error refetch={refetch} />
+      </View>
+    );
+  }
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -22,13 +60,14 @@ function WeatherScreen({navigation}: Props): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <FlatList
-        data={HARDCODED_CITIES}
+        data={cities ?? []}
         keyExtractor={item => item.id}
         renderItem={({item}) => (
           <CityItem
             name={item.name}
-            weather={item.weather.main}
-            temperature={item.main.temp}
+            weather={item.weather}
+            temperature={item.temperature}
+            iconUrl={item.iconUrl}
             withNavigation
             onPress={() => navigation.navigate('Details', {city: item})}
           />
@@ -37,5 +76,14 @@ function WeatherScreen({navigation}: Props): JSX.Element {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  center: {
+    marginHorizontal: 30,
+    height: '100%',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+});
 
 export default WeatherScreen;
