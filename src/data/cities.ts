@@ -8,6 +8,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -19,6 +27,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -30,6 +46,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -41,6 +65,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -52,6 +84,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -63,6 +103,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -74,6 +122,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -85,6 +141,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -96,6 +160,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -107,6 +179,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -118,6 +198,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
   {
@@ -129,6 +217,14 @@ export const HARDCODED_CITIES = [
     },
     main: {
       temp: 100,
+      humidity: 64,
+      pressure: 1015,
+    },
+    wind: {
+      speed: 0.55,
+    },
+    clouds: {
+      all: 95,
     },
   },
 ];

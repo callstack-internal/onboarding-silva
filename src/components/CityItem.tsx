@@ -6,31 +6,44 @@ type CityItemProps = {
   name: string;
   weather: string;
   temperature: number;
-  onPress: () => void;
+  withNavigation?: boolean;
+  onPress?: () => void;
 };
 
-function CityItem(item: CityItemProps): JSX.Element {
-  return (
-    <TouchableOpacity
-      style={styles.container}
-      activeOpacity={0.6}
-      accessibilityRole={'button'}
-      onPress={item.onPress}>
-      <View style={styles.imagePlaceholder} />
-      <View style={styles.textContainer}>
-        <Text style={styles.name}>{item.name}</Text>
-        <Text style={styles.weather}>{item.weather}</Text>
-      </View>
-      <View style={styles.temperatureContainer}>
-        <Text style={styles.temperature}>{item.temperature}ºC</Text>
-      </View>
-      <Image
-        accessibilityIgnoresInvertColors
-        source={require('../assets/chevron-right.png')}
-      />
-    </TouchableOpacity>
-  );
-}
+const CityItem = React.memo(
+  ({name, weather, temperature, withNavigation, onPress}: CityItemProps) => {
+    const content = () => (
+      <>
+        <View style={styles.imagePlaceholder} />
+        <View style={styles.textContainer}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.weather}>{weather}</Text>
+        </View>
+        <View style={styles.temperatureContainer}>
+          <Text style={styles.temperature}>{temperature}ºC</Text>
+        </View>
+        {!!withNavigation && (
+          <Image
+            accessibilityIgnoresInvertColors
+            source={require('../assets/chevron-right.png')}
+          />
+        )}
+      </>
+    );
+
+    return withNavigation ? (
+      <TouchableOpacity
+        style={styles.container}
+        activeOpacity={0.6}
+        accessibilityRole={'button'}
+        onPress={onPress}>
+        {content()}
+      </TouchableOpacity>
+    ) : (
+      <View style={styles.container}>{content()}</View>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -59,6 +72,7 @@ const styles = StyleSheet.create({
   },
   weather: {
     color: COLORS.textSecundary,
+    fontWeight: '500',
   },
   temperatureContainer: {
     paddingVertical: 5,
