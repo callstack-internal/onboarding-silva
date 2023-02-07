@@ -29,6 +29,7 @@ export const useWeather = (
       const data = await fetchWeatherByCityIds(cityIds);
       const cityData = data.map(d => convertToCity(d));
       setData(cityData);
+      setIsError(false);
       setLoading(false);
     } catch (err) {
       console.error(err);
