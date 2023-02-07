@@ -6,6 +6,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 33
         targetSdkVersion = 33
+        kotlinVersion = "1.7.21"
 
         // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
         ndkVersion = "23.1.7779620"
@@ -17,5 +18,16 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:7.3.1")
         classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+    }
+}
+
+// Detox docs are not complient with RN 0.71.1 yet, this fix came from a Github PR
+// @https://github.com/wix/Detox/pull/3869
+allprojects {
+    repositories {
+        maven {
+            url("$rootDir/../node_modules/detox/Detox-android")
+        }
     }
 }
