@@ -1,6 +1,6 @@
-import {HARDCODED_CITIES} from '../data/cities';
+import {City} from '../api/types';
 
 export type RootStackParamList = {
   Weather: undefined;
-  Details: {city: typeof HARDCODED_CITIES[0]}; // @TODO: complete city type
+  Details: {city: City};
 };
