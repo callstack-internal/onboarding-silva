@@ -5,11 +5,12 @@ import {COLORS} from '../styles';
 type LineItemProps = {
   name: string;
   value: string;
+  testId?: string;
 };
 
-function LineItem({name, value}: LineItemProps): JSX.Element {
+function LineItem({name, value, testId}: LineItemProps): JSX.Element {
   return (
-    <View style={styles.container} testID="line-item">
+    <View style={styles.container} testID={testId}>
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.value}>{value}</Text>
     </View>

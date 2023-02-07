@@ -28,11 +28,28 @@ function DetailsScreen({route}: Props): JSX.Element {
         weather={city.weather}
         temperature={city.temperature}
         iconUrl={city.iconUrl}
+        testId="city-item"
       />
-      <LineItem name={'Humidity'} value={`${city.humidity}%`} />
-      <LineItem name={'Pressure'} value={`${city.pressure} hPa`} />
-      <LineItem name={'Wind Speed'} value={`${city.wind} mph`} />
-      <LineItem name={'Cloud Cover'} value={`${city.clouds}%`} />
+      <LineItem
+        name={'Humidity'}
+        value={`${city.humidity}%`}
+        testId="line-item"
+      />
+      <LineItem
+        name={'Pressure'}
+        value={`${city.pressure} hPa`}
+        testId="line-item"
+      />
+      <LineItem
+        name={'Wind Speed'}
+        value={`${city.wind} mph`}
+        testId="line-item"
+      />
+      <LineItem
+        name={'Cloud Cover'}
+        value={`${city.clouds}%`}
+        testId="line-item"
+      />
     </SafeAreaView>
   );
 }

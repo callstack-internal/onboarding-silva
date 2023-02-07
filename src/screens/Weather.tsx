@@ -62,13 +62,14 @@ function WeatherScreen({navigation}: Props): JSX.Element {
       <FlatList
         data={cities ?? []}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
+        renderItem={({item, index}) => (
           <CityItem
             name={item.name}
             weather={item.weather}
             temperature={item.temperature}
             iconUrl={item.iconUrl}
             withNavigation
+            testId={`city-item.${index}`}
             onPress={() => navigation.navigate('Details', {city: item})}
           />
         )}
