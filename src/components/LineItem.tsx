@@ -9,7 +9,7 @@ type LineItemProps = {
 
 function LineItem({name, value}: LineItemProps): JSX.Element {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="line-item">
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.value}>{value}</Text>
     </View>
