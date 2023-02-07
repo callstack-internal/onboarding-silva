@@ -40,7 +40,7 @@ function WeatherScreen({navigation}: Props): JSX.Element {
   if (isLoading) {
     return (
       <View style={styles.center}>
-        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" testID="loader" />
       </View>
     );
   }

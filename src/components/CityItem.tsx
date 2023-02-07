@@ -23,6 +23,7 @@ const CityItem = React.memo(
     const content = () => (
       <>
         <Image
+          accessibilityLabel={`Icon of ${weather} weather`}
           accessibilityIgnoresInvertColors
           style={styles.image}
           source={{uri: iconUrl}}
@@ -32,7 +33,7 @@ const CityItem = React.memo(
           <Text style={styles.weather}>{weather}</Text>
         </View>
         <View style={styles.temperatureContainer}>
-          <Text style={styles.temperature}>{temperature}ºC</Text>
+          <Text style={styles.temperature}>{`${temperature}ºC`}</Text>
         </View>
         {!!withNavigation && (
           <Image
@@ -48,11 +49,14 @@ const CityItem = React.memo(
         style={styles.container}
         activeOpacity={0.6}
         accessibilityRole={'button'}
+        testID="city-item-pressable"
         onPress={onPress}>
         {content()}
       </TouchableOpacity>
     ) : (
-      <View style={styles.container}>{content()}</View>
+      <View testID="city-item" style={styles.container}>
+        {content()}
+      </View>
     );
   },
 );
