@@ -79,6 +79,7 @@ function WeatherScreen({navigation}: Props): JSX.Element {
 
 const styles = StyleSheet.create({
   center: {
+    marginHorizontal: 30,
     height: '100%',
     justifyContent: 'center',
     alignContent: 'center',

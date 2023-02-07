@@ -59,7 +59,6 @@ const CityItem = React.memo(
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.white,
     flexDirection: 'row',
     alignItems: 'center',
     height: 85,

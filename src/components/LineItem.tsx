@@ -18,7 +18,6 @@ function LineItem({name, value}: LineItemProps): JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.white,
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 15,

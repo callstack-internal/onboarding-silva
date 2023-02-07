@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     color: COLORS.textPrimary,
     fontWeight: '500',
     textAlign: 'center',
+    marginBottom: 10,
   },
 });
 
