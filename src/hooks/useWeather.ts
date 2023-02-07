@@ -31,6 +31,7 @@ export const useWeather = (
       setData(cityData);
       setLoading(false);
     } catch (err) {
+      console.error(err);
       setIsError(true);
       setLoading(false);
     }
