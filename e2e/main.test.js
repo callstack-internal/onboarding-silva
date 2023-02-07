@@ -21,7 +21,7 @@ describe('WeatherApp', () => {
     if (device.getPlatform() === 'ios') {
       await element(by.text('Weather')).tap();
     } else {
-      device.pressBack();
+      await device.pressBack();
     }
 
     await expect(element(by.id('city-item.0'))).toBeVisible();
