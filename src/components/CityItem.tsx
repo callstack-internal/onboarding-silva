@@ -8,6 +8,7 @@ type CityItemProps = {
   temperature: number;
   iconUrl: string;
   withNavigation?: boolean;
+  testId?: string;
   onPress?: () => void;
 };
 
@@ -18,6 +19,7 @@ const CityItem = React.memo(
     temperature,
     iconUrl,
     withNavigation,
+    testId,
     onPress,
   }: CityItemProps) => {
     const content = () => (
@@ -49,12 +51,12 @@ const CityItem = React.memo(
         style={styles.container}
         activeOpacity={0.6}
         accessibilityRole={'button'}
-        testID="city-item-pressable"
+        testID={testId}
         onPress={onPress}>
         {content()}
       </TouchableOpacity>
     ) : (
-      <View testID="city-item" style={styles.container}>
+      <View testID={testId} style={styles.container}>
         {content()}
       </View>
     );

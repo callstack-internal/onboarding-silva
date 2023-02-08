@@ -37,7 +37,7 @@ function WeatherScreen({navigation}: Props): JSX.Element {
 
   const [cities, isLoading, isError, refetch] = useWeather(CITIES_LIST);
 
-  if (isLoading) {
+  if (isLoading && !cities) {
     return (
       <View style={styles.center}>
         <ActivityIndicator size="large" testID="loader" />
@@ -62,13 +62,16 @@ function WeatherScreen({navigation}: Props): JSX.Element {
       <FlatList
         data={cities ?? []}
         keyExtractor={item => item.id}
-        renderItem={({item}) => (
+        refreshing={isLoading}
+        onRefresh={refetch}
+        renderItem={({item, index}) => (
           <CityItem
             name={item.name}
             weather={item.weather}
             temperature={item.temperature}
             iconUrl={item.iconUrl}
             withNavigation
+            testId={`city-item.${index}`}
             onPress={() => navigation.navigate('Details', {city: item})}
           />
         )}
