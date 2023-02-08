@@ -96,8 +96,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				436C2BA72993BF1E0025C4DE /* MyNotification.h */,
-				436C2BA82993BF3F0025C4DE /* MyNotification.m */,
+				436C2BAB2993C4A30025C4DE /* NativeNotification */,
 			);
 			name = WeatherApp;
 			sourceTree = "<group>";
@@ -110,6 +109,15 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-WeatherApp-WeatherAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		436C2BAB2993C4A30025C4DE /* NativeNotification */ = {
+			isa = PBXGroup;
+			children = (
+				436C2BA72993BF1E0025C4DE /* MyNotification.h */,
+				436C2BA82993BF3F0025C4DE /* MyNotification.m */,
+			);
+			path = NativeNotification;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {

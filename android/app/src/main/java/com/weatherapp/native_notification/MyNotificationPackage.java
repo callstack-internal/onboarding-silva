@@ -1,4 +1,4 @@
-package com.weatherapp;
+package com.weatherapp.native_notification;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

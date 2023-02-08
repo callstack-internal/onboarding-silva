@@ -1,4 +1,4 @@
-package com.weatherapp;
+package com.weatherapp.native_notification;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
