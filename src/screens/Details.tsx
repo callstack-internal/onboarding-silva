@@ -5,7 +5,6 @@ import {
   View,
   useColorScheme,
   StyleSheet,
-  Text,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
