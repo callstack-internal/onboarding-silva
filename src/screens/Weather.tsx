@@ -7,7 +7,6 @@ import {
   View,
   useColorScheme,
   StyleSheet,
-  Button,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -15,7 +14,6 @@ import {RootStackParamList} from '../navigation/types';
 import CityItem from '../components/CityItem';
 import Error from '../components/Error';
 import {useWeather} from '../hooks/useWeather';
-import NativeNotificationInterface from '../modules/NativeNotification';
 
 const CITIES_LIST = [
   2988507, // Paris,
@@ -60,15 +58,6 @@ function WeatherScreen({navigation}: Props): JSX.Element {
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <Button
-        title="psst, click here"
-        onPress={() =>
-          NativeNotificationInterface.showNotification(
-            'Hello',
-            'have you heard of our lord and saviour jebus christ',
-          )
-        }
       />
       <FlatList
         data={cities ?? []}
