@@ -13,11 +13,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.13.x
-          cache: npm
+          cache: yarn
+      - name: Get yarn cache directory
+        id: yarn-cache-dir
+        run: |
+          echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: cache-node-modules
+        with:
+          path: |
+            **/node_modules
+            ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-${{ matrix.node-version }}-modules-${{ hashFiles('./yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node-version }}-modules-
       - name: Install
-        run: npm ci
+        run: yarn --immutable
       - name: Lint
-        run: npm run lint
+        run: yarn run lint
       - name: Test
-        run: npm test
-
+        run: yarn run test
