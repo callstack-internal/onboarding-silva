@@ -12,6 +12,12 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		436C2BA92993BF3F0025C4DE /* MyNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BA82993BF3F0025C4DE /* MyNotification.m */; };
+		436C2BAA2993BF3F0025C4DE /* MyNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BA82993BF3F0025C4DE /* MyNotification.m */; };
+		436C2BAF2993C9A70025C4DE /* RNCKNativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BAE2993C9A70025C4DE /* RNCKNativeButton.m */; };
+		436C2BB02993C9A70025C4DE /* RNCKNativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BAE2993C9A70025C4DE /* RNCKNativeButton.m */; };
+		436C2BB32993CA030025C4DE /* RNCKNativeButtonViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BB22993CA030025C4DE /* RNCKNativeButtonViewManager.m */; };
+		436C2BB42993CA030025C4DE /* RNCKNativeButtonViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 436C2BB22993CA030025C4DE /* RNCKNativeButtonViewManager.m */; };
 		7699B88040F8A987B510C191 /* libPods-WeatherApp-WeatherAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WeatherApp-WeatherAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +44,12 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WeatherApp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WeatherApp-WeatherAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApp-WeatherAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		436C2BA72993BF1E0025C4DE /* MyNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyNotification.h; sourceTree = "<group>"; };
+		436C2BA82993BF3F0025C4DE /* MyNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNotification.m; sourceTree = "<group>"; };
+		436C2BAD2993C99E0025C4DE /* RNCKNativeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCKNativeButton.h; sourceTree = "<group>"; };
+		436C2BAE2993C9A70025C4DE /* RNCKNativeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCKNativeButton.m; sourceTree = "<group>"; };
+		436C2BB12993C9FA0025C4DE /* RNCKNativeButtonViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNCKNativeButtonViewManager.h; sourceTree = "<group>"; };
+		436C2BB22993CA030025C4DE /* RNCKNativeButtonViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCKNativeButtonViewManager.m; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-WeatherApp-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp-WeatherAppTests/Pods-WeatherApp-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-WeatherApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,12 +98,14 @@
 		13B07FAE1A68108700A75B9A /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				436C2BAC2993C9880025C4DE /* NativeButton */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				436C2BAB2993C4A30025C4DE /* NativeNotification */,
 			);
 			name = WeatherApp;
 			sourceTree = "<group>";
@@ -104,6 +118,26 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-WeatherApp-WeatherAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		436C2BAB2993C4A30025C4DE /* NativeNotification */ = {
+			isa = PBXGroup;
+			children = (
+				436C2BA72993BF1E0025C4DE /* MyNotification.h */,
+				436C2BA82993BF3F0025C4DE /* MyNotification.m */,
+			);
+			path = NativeNotification;
+			sourceTree = "<group>";
+		};
+		436C2BAC2993C9880025C4DE /* NativeButton */ = {
+			isa = PBXGroup;
+			children = (
+				436C2BAD2993C99E0025C4DE /* RNCKNativeButton.h */,
+				436C2BAE2993C9A70025C4DE /* RNCKNativeButton.m */,
+				436C2BB12993C9FA0025C4DE /* RNCKNativeButtonViewManager.h */,
+				436C2BB22993CA030025C4DE /* RNCKNativeButtonViewManager.m */,
+			);
+			path = NativeButton;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -404,7 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436C2BAA2993BF3F0025C4DE /* MyNotification.m in Sources */,
+				436C2BB02993C9A70025C4DE /* RNCKNativeButton.m in Sources */,
 				00E356F31AD99517003FC87E /* WeatherAppTests.m in Sources */,
+				436C2BB42993CA030025C4DE /* RNCKNativeButtonViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +449,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436C2BA92993BF3F0025C4DE /* MyNotification.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				436C2BAF2993C9A70025C4DE /* RNCKNativeButton.m in Sources */,
+				436C2BB32993CA030025C4DE /* RNCKNativeButtonViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
